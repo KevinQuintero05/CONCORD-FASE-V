@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<div layout:fragment="content">
+    <form method="post" th:action="@{/usuarios/save}" th:object="${usuario}">
+        <input placeholder="Nombre Usuario" type="text" name="" required th:field="*{nombreusuario}"><br>
+        <input placeholder="Correo Electronico" type="text" name="" required th:field="*{correoelectronico}"><br>
+        <input placeholder="Contraseña" type="text" name="" required th:field="*{contraseña}"><br>
+        <input placeholder="Nombres" type="text" name="" required th:field="*{nombres}"><br>
+        <input placeholder="Apellidos" type="text" name="" required th:field="*{apellidos}"><br>
+        <input placeholder="Numero de Documento" type="number" name="" required th:field="*{nocedula}"><br>
+        <input placeholder="Direccion" type="text" name="" required th:field="*{direccion}"><br>
+        <input placeholder="Telefono" type="number" name="" required th:field="*{telefono}"><br>
+        <input placeholder="Edad" type="text" name="" required th:field="*{edad}"><br>
+        <select th:field="*{rol}" required>
+            <th:block th:each="supplier: ${roles} ">
+                <option th:text="${rol.nombre}" th:value="${rol.id}"></option>
+            </th:block>
+        </select>
+
+        <input type="submit" value="Save">
+    </form>
+</div>
+<body>
+
+</body>
+</html>

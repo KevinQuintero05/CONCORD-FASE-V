@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <table  class="table table-dark table-striped">
+        <thead>
+        <tr>
+            <th>Nombre de Usuario</th>
+            <th>Correo Electronico</th>
+            <th>Estado Cuenta</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Numero de Documento</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+            <th>Edad</th>
+            <th>Rol</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each=" usuario: ${usuarios}">
+            <td th:text="${usuario.nombreusuario}"></td>
+            <td th:text="${usuario.correoelectronico}"></td>
+            <td th:text="${usuario.estadocuenta}"></td>
+            <td th:text="${usuario.nombres}"></td>
+            <td th:text="${usuario.apellidos}"></td>
+            <td th:text="${usuario.nocedula}"></td>
+            <td th:text="${usuario.direccion}"></td>
+            <td th:text="${usuario.telefono}"></td>
+            <td th:text="${usuario.edad}"></td>
+
+            <td th:text="${usuario.rol.nombre}"></td>
+            <td>
+                <a th:href="@{'/usuarios/edit/' + ${usuario.id }}">Edit<i class="bi bi-pencil-square"></i></a>
+            </td>
+            <td>
+                <a th:href="@{'/usuarios/delete/' + ${usuario.id }}">Delete<i class="bi bi-trash-fill"></i></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,6 +1,6 @@
 package com.concord.Repository;
 
-import com.concord.Entirty.Usuario;
+import com.concord.Entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

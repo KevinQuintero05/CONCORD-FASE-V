@@ -1,4 +1,4 @@
-package com.concord.Entirty;
+package com.concord.Entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
@@ -14,20 +14,20 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_customer", unique = true)
-    private Long idUsuario;
+    @Column(name = "idUsuario", unique = true)
+    private Long idusuario;
 
     @Column(length = 50, nullable = false)
-    private String nombreUsuario;
+    private String nombreusuario;
 
     @Column(length = 100, nullable = false)
-    private String correoElectronivo;
+    private String correoelectronico;
 
     @Column(length = 50, nullable = false)
     private String contraseña;
 
-    @Column(length = 10, nullable = false)
-    private  String estadoCuenta;
+    @Column(length = 10, nullable = true)
+    private  String estadocuenta;
 
     @Column(length = 150, nullable = false)
     private String nombres;
@@ -36,7 +36,7 @@ public class Usuario {
     private String apellidos;
 
     @Column(length = 100, nullable = false)
-    private Long noCedula;
+    private Long nocedula;
 
     @Column(length = 50, nullable = false)
     private String direccion;
@@ -48,7 +48,7 @@ public class Usuario {
     private Long edad;
 
     @ManyToOne
-    @JoinColumn(name = "idRol")
+    @JoinColumn(name = "idrol")
     @JsonBackReference
     private Rol rol;
 }

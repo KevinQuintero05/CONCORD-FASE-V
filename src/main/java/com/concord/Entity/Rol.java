@@ -1,4 +1,4 @@
-package com.concord.Entirty;
+package com.concord.Entity;
 
 import lombok.Getter;
 import lombok.Setter;
